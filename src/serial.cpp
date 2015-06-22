@@ -237,8 +237,7 @@ string sertojson(serial ser, catalog* scanlog1) {
       }
       if ((scanlog->key_type[id-1]) == flag[4]) {
         for (int j = ser.offset[i]; j < ser.offset[i] + ser.len[i]; j++) {
-          if (ser.data[j] == 't') ans += "true";
-          if (ser.data[j] == 'f') ans += "false";
+          ans += ser.data[j];  // bool, true of false, add to ans as a string
         }
       }
           if (i != ser.count - 1) ans += ", ";
